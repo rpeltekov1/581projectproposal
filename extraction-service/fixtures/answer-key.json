@@ -1,0 +1,48 @@
+{
+  "unit": "sqft",
+  "area_basis": "internal",
+  "total_area": 960,
+  "bedrooms": 2,
+  "bathrooms": 1,
+  "doors": 7,
+  "windows": 6,
+  "rooms": [
+    {
+      "id": "r1",
+      "type": "living",
+      "name": "Living room",
+      "area": 280
+    },
+    {
+      "id": "r2",
+      "type": "kitchen",
+      "name": "Kitchen",
+      "area": 160
+    },
+    {
+      "id": "r3",
+      "type": "bedroom",
+      "name": "Bedroom 1",
+      "area": 180
+    },
+    {
+      "id": "r4",
+      "type": "bedroom",
+      "name": "Bedroom 2",
+      "area": 160
+    },
+    {
+      "id": "r5",
+      "type": "bathroom",
+      "name": "Bathroom",
+      "area": 80
+    },
+    {
+      "id": "r6",
+      "type": "hall",
+      "name": "Hall",
+      "area": 100
+    }
+  ],
+  "warnings": []
+}

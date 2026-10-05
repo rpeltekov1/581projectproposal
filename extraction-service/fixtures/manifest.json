@@ -1,0 +1,31 @@
+{
+  "test_set_id": "parcel-synthetic-smoke-v1",
+  "synthetic": true,
+  "notes": "Smoke tests, not a Gridsnap benchmark. Three tiers share one layout; never split these across train/test. Bare room types/areas are intentionally unobservable.",
+  "cases": [
+    {
+      "id": "tagged-01",
+      "tier": "tagged",
+      "file": "tagged.pdf",
+      "sha256": "171fb270705b97865714f410d6544a9aff8e15fd0a8c2825e2d14e6935118067",
+      "answer_key": "answer-key.json",
+      "key_sha256": "9a4b2350e4833fced5f90604668f457e46a8c3a613073fb5be56ae36d5a0d74c"
+    },
+    {
+      "id": "labelled-01",
+      "tier": "labelled",
+      "file": "labelled.pdf",
+      "sha256": "74ab31343213a7b20c76f35d490b7494b5f4e0ec8d84bf88b5bb57b18fe93d70",
+      "answer_key": "answer-key.json",
+      "key_sha256": "9a4b2350e4833fced5f90604668f457e46a8c3a613073fb5be56ae36d5a0d74c"
+    },
+    {
+      "id": "bare-01",
+      "tier": "bare",
+      "file": "bare.pdf",
+      "sha256": "d36a1ff9bdc225d9580c59415515e9766a6a3f5baf50bca710cf82e2bdb31e9d",
+      "answer_key": "answer-key.json",
+      "key_sha256": "9a4b2350e4833fced5f90604668f457e46a8c3a613073fb5be56ae36d5a0d74c"
+    }
+  ]
+}

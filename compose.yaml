@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: parcel
+      POSTGRES_DB: parcel
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in your shell}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U parcel -d parcel"]
+      interval: 5s
+      retries: 10
+  extractor:
+    build: ./extraction-service
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://parcel:${POSTGRES_PASSWORD}@postgres:5432/parcel
+      DB_AUTO_CREATE: "1"
+      UPLOAD_DIR: /data/plans
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?Set SERVICE_TOKEN in your shell}
+      VISION_API_KEY: ${VISION_API_KEY:-}
+      VISION_MODEL: ${VISION_MODEL:-}
+      VISION_BASE_URL: ${VISION_BASE_URL:-https://api.openai.com/v1}
+      SERVICE_REVISION: ${SERVICE_REVISION:-local}
+    volumes: ["plan-data:/data/plans"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+volumes:
+  postgres-data:
+  plan-data:
